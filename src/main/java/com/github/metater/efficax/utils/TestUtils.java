@@ -1,7 +1,5 @@
 package com.github.metater.efficax.utils;
 
-import javax.lang.model.type.PrimitiveType;
-
 public class TestUtils {
     public static boolean isInt(String s) {
         try {
@@ -16,19 +14,13 @@ public class TestUtils {
     }
     /** Takes in command args checks if null, and */
     public static boolean argsIsNull(String[] args){
-        if (args.length == 0)
-            return true;
-        return false;
+        return args.length == 0;
     }
     /** Takes in command args checks if not null, and */
     public static boolean argsIsNotNull(String[] args){
-        if (args.length == 0)
-            return false;
-        return true;
+        return args.length != 0;
     }
     public static boolean firstArgIsNotNullAndIsIntAndOneArg(String[] args) {
-        if (args.length != 1 || !argsIsNotNull(args) || !isInt(args[0]))
-            return false;
-        return true;
+        return args.length == 1 && argsIsNotNull(args) && isInt(args[0]);
     }
 }

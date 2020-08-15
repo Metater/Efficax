@@ -7,3 +7,7 @@ commands:
     description: Gives you diamonds
     usage: /diamonds <number of items>
     permission: efficax.diamonds
+  gui:
+    description: Opens a GUI inventory, for learning
+    usage: /gui
+    permission: efficax.gui
