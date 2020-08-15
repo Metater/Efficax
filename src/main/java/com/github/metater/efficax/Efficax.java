@@ -1,6 +1,6 @@
 package com.github.metater.efficax;
 
-import com.github.metater.efficax.commands.Commands;
+import com.github.metater.efficax.commands.CommandHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Efficax extends JavaPlugin {
@@ -15,6 +15,6 @@ public class Efficax extends JavaPlugin {
     }
     private void Init() {
         Efficax efficaxInstance = this;
-        new Commands().Init(efficaxInstance);
+        new CommandHandler().Init(efficaxInstance);
     }
 }
