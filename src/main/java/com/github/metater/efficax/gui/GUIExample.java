@@ -58,7 +58,7 @@ public class GUIExample {
 
     @EventHandler
     public void onInventoryClick(final InventoryDragEvent e) {
-        if (e.getInventory() == inventory) {
+        if (e.getInventory().equals(inventory)) {
             e.setCancelled(true);
         }
     }
