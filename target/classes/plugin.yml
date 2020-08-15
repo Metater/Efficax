@@ -1,0 +1,9 @@
+name: Efficax
+version: 1.16.2
+main: com.github.metater.efficax.Efficax
+author: Metater
+commands:
+  diamonds:
+    description: Gives you diamonds
+    usage: /diamonds <number of items>
+    permission: efficax.diamonds
