@@ -1,0 +1,3 @@
+/Todo Metater, keep track of opened InventoryViews
+/todo HumanEntity#openInventory(Inventory) returns an InventoryView. Have a HashSet, hold those instances when they're opened. Listen for a close event, remove them when closed.
+/todo You can check if that set contains the view that was clicked in the event
