@@ -1,5 +1,5 @@
 name: Efficax
-version: 1.16.2
+version: 1.16.4
 main: com.github.metater.efficax.Efficax
 author: Metater
 commands:
