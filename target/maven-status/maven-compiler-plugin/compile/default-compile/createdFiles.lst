@@ -1,9 +1,9 @@
+com\github\metater\efficax\api\events\APIEventPlayer.class
 com\github\metater\efficax\commands\CommandDiamonds.class
 com\github\metater\efficax\commands\CommandHandler.class
 com\github\metater\efficax\Efficax.class
 com\github\metater\efficax\utils\TestUtils.class
 com\github\metater\efficax\commands\CommandGUI.class
-com\github\metater\efficax\api\events\APIEventPlayerJoin.class
 com\github\metater\efficax\gui\GUIHandler.class
 com\github\metater\efficax\gui\GUIExample.class
 com\github\metater\efficax\api\APIHandler.class

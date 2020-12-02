@@ -1,7 +1,7 @@
 package com.github.metater.efficax.api;
 
 import com.github.metater.efficax.Efficax;
-import com.github.metater.efficax.api.events.APIEventPlayerJoin;
+import com.github.metater.efficax.api.events.APIEventPlayer;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,12 +11,12 @@ import java.net.URL;
 
 public class APIHandler {
     public void Init(Efficax efficax) {
-        efficax.getServer().getPluginManager().registerEvents(new APIEventPlayerJoin(efficax), efficax);
+        efficax.getServer().getPluginManager().registerEvents(new APIEventPlayer(efficax), efficax);
     }
 
     public static String SendDataToAPI(String data) throws Exception {
 
-        String response = doHttpUrlConnectionAction("http://1.metater.tk:5000/?name=Efficax&for=" + data);
+        String response = doHttpUrlConnectionAction("http://localhost:5000/mc?server=Gaemer%20Boius&data=" + data);
         return response;
     }
     private static String doHttpUrlConnectionAction(String desiredUrl)

@@ -5,10 +5,11 @@ import com.github.metater.efficax.api.APIHandler;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class APIEventPlayerJoin implements Listener {
+public class APIEventPlayer implements Listener {
     Efficax efficax;
-    public APIEventPlayerJoin(Efficax efficax)
+    public APIEventPlayer(Efficax efficax)
     {
         this.efficax = efficax;
     }
@@ -20,9 +21,23 @@ public class APIEventPlayerJoin implements Listener {
             {
                 String response = "Failed";
                 try {
-                    response = APIHandler.SendDataToAPI("Hello");
+                    response = APIHandler.SendDataToAPI(playerJoinEvent.getPlayer().getDisplayName());
                 } catch (Exception e) {
                     playerJoinEvent.getPlayer().sendMessage("Failed");
+                }
+            }
+        });
+    }
+    @EventHandler
+    public void onPlayerQuit(final PlayerQuitEvent playerQuitEvent)
+    {
+        playerQuitEvent.getPlayer().sendMessage("Gamer");
+        efficax.getServer().getScheduler().runTaskAsynchronously(efficax, () -> {
+            {
+                String response = "503";
+                try {
+                    response = APIHandler.SendDataToAPI(playerQuitEvent.getPlayer().getDisplayName());
+                } catch (Exception e) {
                 }
             }
         });
