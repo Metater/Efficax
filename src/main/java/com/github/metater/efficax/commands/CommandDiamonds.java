@@ -10,7 +10,7 @@ import com.github.metater.efficax.utils.TestUtils;
 
 public class CommandDiamonds implements CommandExecutor {
     // This method is called, when somebody uses our command
-    @Override
+    //@Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
