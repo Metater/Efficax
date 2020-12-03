@@ -12,7 +12,12 @@ public class Efficax extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        getLogger().info("onDisable was called!");
+        //getLogger().info("onDisable was called!");
+        tellAPIServerShutdown();
+    }
+    private void tellAPIServerShutdown()
+    {
+        APIHandler.SendDataToAPIVoid("{\"shutdown\":true}");
     }
     private void Init() {
         Efficax efficaxInstance = this;

@@ -13,11 +13,29 @@ public class APIHandler {
     public void Init(Efficax efficax) {
         efficax.getServer().getPluginManager().registerEvents(new APIEventPlayer(efficax), efficax);
     }
+    /*
+    public class APIEventData()
+    {
+        
+    }
+     */
 
-    public static String SendDataToAPI(String data) throws Exception {
-
-        String response = doHttpUrlConnectionAction("http://localhost:5000/mc?server=Gaemer%20Boius&data=" + data);
+    public static String SendDataToAPI(String data)
+    {
+        String response;
+        try {
+            response = doHttpUrlConnectionAction("http://localhost:5000/mc?server=Gaemer%20Boius&data=" + data);
+        }
+        catch (Exception e) { response = "503"; }
         return response;
+    }
+    public static void SendDataToAPIVoid(String data)
+    {
+        String response;
+        try {
+            response = doHttpUrlConnectionAction("http://localhost:5000/mc?server=Gaemer%20Boius&data=" + data);
+        }
+        catch (Exception e) { }
     }
     private static String doHttpUrlConnectionAction(String desiredUrl)
             throws Exception {
