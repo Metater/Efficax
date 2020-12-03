@@ -23,7 +23,9 @@ public class APIEventPlayer implements Listener {
     {
         efficax.getServer().getScheduler().runTaskAsynchronously(efficax, () ->
         {
-            String response = APIHandler.SendDataToAPI("{\"player\":\"" + player.getDisplayName() + "\",\"event\":\"" + eventType + "\"}");
+            APIHandler.APIPlayerEventData apiPlayerEventData = new APIHandler.APIPlayerEventData("playerEventData", "Gaemer-Boius", eventType, player.getDisplayName());
+
+            String response = APIHandler.SendDataToAPI(apiPlayerEventData.ToJSON());
             if (response == "503") efficax.getLogger().info("API Server is down: " + response);
         });
     }

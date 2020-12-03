@@ -13,18 +13,34 @@ public class APIHandler {
     public void Init(Efficax efficax) {
         efficax.getServer().getPluginManager().registerEvents(new APIEventPlayer(efficax), efficax);
     }
-    /*
-    public class APIEventData()
+    public static class APIMCServerData
     {
-        
+        public String dataType = "mcServerData";
+        public String dataSubtype;
+        public String serverName;
     }
-     */
+    public static class APIPlayerEventData extends APIMCServerData
+    {
+        public String movementType;
+        public String playerName;
+        public APIPlayerEventData(String dataSubtype, String serverName, String movementType, String playerName)
+        {
+            this.dataSubtype = dataSubtype;
+            this.serverName = serverName;
+            this.movementType = movementType;
+            this.playerName = playerName;
+        }
+        public String ToJSON()
+        {
+            return String.format("{\"type\":\"%s\",\"subtype\":\"%s\",\"server\":\"%s\",\"movement\":\"%s\",\"name\":\"%s\"}", dataType, dataSubtype, serverName, movementType, playerName);
+        }
+    }
 
     public static String SendDataToAPI(String data)
     {
         String response;
         try {
-            response = doHttpUrlConnectionAction("http://localhost:5000/mc?server=Gaemer%20Boius&data=" + data);
+            response = doHttpUrlConnectionAction("http://localhost:5000/?data=" + data);
         }
         catch (Exception e) { response = "503"; }
         return response;
