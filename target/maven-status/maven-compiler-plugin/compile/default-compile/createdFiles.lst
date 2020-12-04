@@ -1,12 +1,15 @@
 com\github\metater\efficax\commands\CommandDiamonds.class
-com\github\metater\efficax\api\APIHandler$APIPlayerEventData.class
+com\github\metater\efficax\api\data\APIData.class
 com\github\metater\efficax\utils\TestUtils.class
-com\github\metater\efficax\api\APIHandler$APIMCServerData.class
 com\github\metater\efficax\commands\CommandGUI.class
+com\github\metater\efficax\api\data\APIData$PlayerEvent.class
 com\github\metater\efficax\gui\GUIHandler.class
+com\github\metater\efficax\api\data\APIData$MCServer.class
+com\github\metater\efficax\api\data\APIData$ServerAction.class
 com\github\metater\efficax\api\events\APIEventPlayer.class
 com\github\metater\efficax\commands\CommandHandler.class
 com\github\metater\efficax\Efficax.class
 com\github\metater\efficax\gui\GUIExample.class
 com\github\metater\efficax\api\APIHandler.class
+com\github\metater\efficax\api\requests\APIRequests.class
 com\github\metater\efficax\utils\InventoryUtils.class

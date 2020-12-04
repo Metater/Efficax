@@ -1,7 +1,8 @@
 package com.github.metater.efficax.api.events;
 
 import com.github.metater.efficax.Efficax;
-import com.github.metater.efficax.api.APIHandler;
+import com.github.metater.efficax.api.data.APIData;
+import com.github.metater.efficax.api.requests.APIRequests;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,10 +24,10 @@ public class APIEventPlayer implements Listener {
     {
         efficax.getServer().getScheduler().runTaskAsynchronously(efficax, () ->
         {
-            APIHandler.APIPlayerEventData apiPlayerEventData = new APIHandler.APIPlayerEventData("playerEventData", "Gaemer-Boius", eventType, player.getDisplayName());
+            APIData.PlayerEvent apiPlayerEventData = new APIData.PlayerEvent("playerEvent", "GaemerBoius", eventType, player.getDisplayName());
 
-            String response = APIHandler.SendDataToAPI(apiPlayerEventData.ToJSON());
-            if (response == "503") efficax.getLogger().info("API Server is down: " + response);
+            String response = APIRequests.SendDataToAPI(apiPlayerEventData.ToJSON());
+            if (response.equals("503")) efficax.getLogger().info("API Server is down: " + response);
         });
     }
 }
