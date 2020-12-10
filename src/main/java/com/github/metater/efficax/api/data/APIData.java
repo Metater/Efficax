@@ -11,16 +11,21 @@ public class APIData {
     {
         public String movementType;
         public String playerName;
-        public PlayerEvent(String dataSubtype, String serverName, String movementType, String playerName)
+        public String world, x, y, z;
+        public PlayerEvent(String dataSubtype, String serverName, String movementType, String playerName, String world, String x, String y, String z)
         {
             this.dataSubtype = dataSubtype;
             this.serverName = serverName;
             this.movementType = movementType;
             this.playerName = playerName;
+            this.world = world;
+            this.x = x;
+            this.y = y;
+            this.z = z;
         }
         public String ToJSON()
         {
-            return String.format("{\"type\":\"%s\",\"subtype\":\"%s\",\"server\":\"%s\",\"movement\":\"%s\",\"name\":\"%s\"}", dataType, dataSubtype, serverName, movementType, playerName);
+            return String.format("{\"type\":\"%s\",\"subtype\":\"%s\",\"server\":\"%s\",\"movement\":\"%s\",\"name\":\"%s\",\"world\":\"%s\",\"location\":[%s,%s,%s]}", dataType, dataSubtype, serverName, movementType, playerName, world, x, y, z);
         }
     }
     public static class ServerAction extends MCServer

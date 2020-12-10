@@ -11,7 +11,7 @@ public class APIRequests {
     {
         String response;
         try {
-            response = doHttpUrlConnectionAction("http://localhost:5000/?data=" + data);
+            response = doHttpUrlConnectionAction("http://api.metater.tk:5000/data?data=" + data);
         }
         catch (Exception e) { response = "503"; }
         return response;
