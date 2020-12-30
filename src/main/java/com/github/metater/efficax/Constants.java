@@ -6,5 +6,5 @@ public final class Constants {
         // restrict instantiation
     }
 
-    public static final String API_URL = "http://api.metater.tk:5000/data?data=";
+    public static final String API_URL = "http://127.0.0.1:5000/data?data=";
 }
