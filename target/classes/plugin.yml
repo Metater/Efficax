@@ -12,3 +12,6 @@ commands:
     description: Opens a GUI inventory, for learning
     usage: /gui
     permission: efficax.gui
+  dist:
+    description: Get your distance from spawn
+    usage: /dist

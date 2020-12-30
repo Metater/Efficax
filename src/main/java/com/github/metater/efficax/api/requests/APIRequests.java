@@ -1,5 +1,7 @@
 package com.github.metater.efficax.api.requests;
 
+import com.github.metater.efficax.Constants;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +13,7 @@ public class APIRequests {
     {
         String response;
         try {
-            response = doHttpUrlConnectionAction("http://api.metater.tk:5000/data?data=" + data);
+            response = doHttpUrlConnectionAction(Constants.API_URL + data);
         }
         catch (Exception e) { response = "503"; }
         return response;

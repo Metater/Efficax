@@ -4,9 +4,13 @@ import com.github.metater.efficax.api.APIHandler;
 import com.github.metater.efficax.api.data.APIData;
 import com.github.metater.efficax.api.requests.APIRequests;
 import com.github.metater.efficax.commands.CommandHandler;
+import com.github.metater.efficax.nonight.NoNightHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Efficax extends JavaPlugin {
+
+    public NoNightHandler noNightHandler = new NoNightHandler(this);
+
     @Override
     public void onEnable() {
         APIData.ServerAction serverAction = new APIData.ServerAction("GaemerBoius", "startup");
@@ -21,8 +25,7 @@ public class Efficax extends JavaPlugin {
         APIRequests.SendDataToAPIVoid(serverAction.ToJSON());
     }
     private void Init() {
-        Efficax efficaxInstance = this;
-        new CommandHandler().Init(efficaxInstance);
-        new APIHandler().Init(efficaxInstance);
+        new CommandHandler().Init(this);
+        new APIHandler().Init(this);
     }
 }
